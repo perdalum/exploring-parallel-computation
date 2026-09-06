@@ -29,9 +29,9 @@ Echo["Compute using "<>ToString[noOfKernels]<>" kernels"];
           Method -> "FinestGrained"
        ]];
 
-Print["Workers: ",$KernelCount]
-Print["Sequential seconds: ",t1]
-Print["Parallel seconds: ",tp]
-Print["Speedup: ",t1/tp]
-Print["Same result: ",(serial===parallel)]
+Print["Workers: ",$KernelCount];
+Print["Sequential seconds: ",t1];
+Print["Parallel seconds: ",tp];
+Print["Speedup: ",t1/tp];
+Print["Same result: ",(serial===parallel)];
 
