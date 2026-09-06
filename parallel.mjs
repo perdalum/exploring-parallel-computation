@@ -23,7 +23,7 @@ function inWorker(n) {
 if (!isMainThread) {
   parentPort.postMessage(f(workerData));
 } else {
-  const inputs = Array(8).fill(5_000_000);
+  const inputs = Array(8).fill(500_000_000);
 
   let start = performance.now();
   const a = inputs.map(f);
@@ -33,8 +33,8 @@ if (!isMainThread) {
   const b = await Promise.all(inputs.map(inWorker));
   const tp = performance.now() - start;
 
-  console.log(`Sequential: ${t1.toFixed(1)} ms`);
-  console.log(`Parallel: ${tp.toFixed(1)} ms`);
+  console.log(`Sequential: ${t1.toFixed(1)/1000} s`);
+  console.log(`Parallel: ${tp.toFixed(1)/1000} s`);
   console.log('Speedup:', t1 / tp);
   console.log('Same results:', a.every((x, i) => x === b[i]));
 }
