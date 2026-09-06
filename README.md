@@ -19,7 +19,7 @@ These examples explore parallel execution; they are not a language benchmark. Th
 | `parallel-fast.wls` | `FunctionCompile` and `ParallelMap` | 500,000,000 iterations |
 | `parallel.nb` | Wolfram notebook | Interactive exploration |
 
-The accompanying article is [`2026-09-06--explorations-parallel-computing.html`](2026-09-06--explorations-parallel-computing.html).
+The accompanying article is [`2026-09-06--explorations-parallel-computing.html`](https://moldrup-dalum.dk/per/output/2026-09-06--explorations-parallel-computing.html).
 
 ## Requirements
 
