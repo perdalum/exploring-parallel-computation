@@ -23,6 +23,7 @@ parallel_map(f, [1000])
 t1 = @elapsed a = map(f, inputs)
 tp = @elapsed b = parallel_map(f, inputs)
 
+println("Julia")
 println("Threads: ", Threads.nthreads())
 println("Sequential: $t1 s")
 println("Parallel: $tp s")

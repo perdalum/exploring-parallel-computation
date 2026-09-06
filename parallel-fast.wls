@@ -10,18 +10,18 @@ compiledF = FunctionCompile[
 noOfKernels = 8;
 inputs = ConstantArray[500000000, noOfKernels];
 
-Echo["start "<>ToString[noOfKernels]<>" kernels."];
+(*Echo["start "<>ToString[noOfKernels]<>" kernels."];*)
 LaunchKernels[noOfKernels];
 DistributeDefinitions[compiledF];
 
-Echo["Warm up the kernels"];
+(*Echo["Warm up the kernels"];*)
 compiledF[1000];
 ParallelEvaluate[compiledF[1000], DistributedContexts->None];
 
-Echo["Compute using one kernel"];
+(*Echo["Compute using one kernel"];*)
 {t1, serial} = AbsoluteTiming[Map[compiledF, inputs]];
 
-Echo["Compute using "<>ToString[noOfKernels]<>" kernels"];
+(*Echo["Compute using "<>ToString[noOfKernels]<>" kernels"];*)
 {tp, parallel} =
     AbsoluteTiming[
        ParallelMap[compiledF, inputs,
@@ -29,6 +29,7 @@ Echo["Compute using "<>ToString[noOfKernels]<>" kernels"];
           Method -> "FinestGrained"
        ]];
 
+Print["Wolfram fast"];
 Print["Workers: ",$KernelCount];
 Print["Sequential seconds: ",t1];
 Print["Parallel seconds: ",tp];

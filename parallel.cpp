@@ -26,6 +26,7 @@ int main() {
     for (auto& task : tasks) b.push_back(task.get());
     double tp = std::chrono::duration<double>(Clock::now() - start).count();
 
+    std::cout << "C++\n";
     std::cout << "Sequential: " << t1 << " s\n";
     std::cout << "Parallel: " << tp << " s\n";
     std::cout << "Speedup: " << t1 / tp << " s\n";

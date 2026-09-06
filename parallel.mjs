@@ -33,6 +33,7 @@ if (!isMainThread) {
   const b = await Promise.all(inputs.map(inWorker));
   const tp = performance.now() - start;
 
+  console.log('Node JavaScript');
   console.log(`Sequential: ${t1.toFixed(1)/1000} s`);
   console.log(`Parallel: ${tp.toFixed(1)/1000} s`);
   console.log('Speedup:', t1 / tp);
